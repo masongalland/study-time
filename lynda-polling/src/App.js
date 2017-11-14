@@ -38,6 +38,12 @@ class App extends Component {
   }
 
   connect() {
+    let member = (sessionStorage.member) ? JSON.parse(sessionStorage.member) : null
+
+    if(member) {
+      this.emit("join", member)
+    }
+
     this.setState({status: "connected"})
     
   }
@@ -54,6 +60,7 @@ class App extends Component {
   }
 
   joined (member) {
+    sessionStorage.member = JSON.stringify(member)
     this.setState({member})
     
   }
