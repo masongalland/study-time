@@ -11,12 +11,14 @@ class App extends Component {
     super(props)
     this.state = {
       status: "disconnected",
-      title: ""
+      title: "",
+      member: {}
     }
 
     this.connect = this.connect.bind(this)
     this.disconnect = this.disconnect.bind(this)
     this.welcome = this.welcome.bind(this)
+    this.emit = this.emit.bind(this)
   }
   
   componentWillMount() {
@@ -24,6 +26,10 @@ class App extends Component {
     this.socket.on("connect", this.connect)
     this.socket.on("disconnect", this.disconnect)
     this.socket.on("welcome", this.welcome)
+  }
+
+  emit(eventName, payload) {
+    this.socket.emit(eventName, payload)
   }
 
   connect() {
@@ -47,7 +53,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header title={this.state.title} status={this.state.status}/>
-        <Router {...this.state}/>
+        <Router emit={this.emit} {...this.state}/>
       </div>
     );
   }

@@ -17,6 +17,15 @@ io.sockets.on("connection", (socket) => {
         console.log('disconnected: %s sockets remaining', connections.length)
     })
 
+    socket.on('join', (payload) => {
+        const newMember = {
+            id: this.id,
+            name: payload.name
+        };
+        this.emit('joined', newMember)
+        console.log("audience joined: %s", payload.name)
+    })
+
     socket.emit('welcome', {title: title})
 
     connections.push(socket)
