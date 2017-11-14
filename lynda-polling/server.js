@@ -1,4 +1,5 @@
 const express = require("express");
+const _= require("underscore")
 
 const app = express();
 var connections = [];
@@ -12,7 +13,14 @@ const io = require("socket.io").listen(server);
 
 io.sockets.on("connection", (socket) => {
 
-    socket.once('disconnect', () => {
+    socket.once('disconnect', function() {
+        var member = _.findWhere(audience, { id: this.id })
+
+        if(member) {
+            audience.splice(audience.indexOf(member), 1);
+            io.sockets.emit('audience', audience);
+            console.log("Left: %s (%s audience members)", member.name, audience.length)
+        }
         connections.splice(connections.indexOf(socket), 1)
         socket.disconnect();
         console.log('disconnected: %s sockets remaining', connections.length)
