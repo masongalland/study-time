@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom'
 
 export default class Join extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export default class Join extends Component {
           required
         />
         <button>Join</button>
+        <Link to="/speaker">Join as speaker</Link>
       </form>
     );
   }

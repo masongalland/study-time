@@ -13,7 +13,8 @@ class App extends Component {
       status: "disconnected",
       title: "",
       member: {},
-      audience: []
+      audience: [],
+      speaker: {}
     }
 
     this.connect = this.connect.bind(this)

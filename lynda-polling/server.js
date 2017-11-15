@@ -5,6 +5,7 @@ const app = express();
 var connections = [];
 var title = 'Untitled Presentation';
 var audience = [];
+var speaker = {};
 
 const server = app.listen(3005, () => console.log("listening on port 3005..."))
 const io = require("socket.io").listen(server);
@@ -29,12 +30,21 @@ io.sockets.on("connection", (socket) => {
     socket.on('join', function(payload) {
         const newMember = {
             id: this.id,
-            name: payload.name
+            name: payload.name,
+            type: 'member'
         };
         this.emit('joined', newMember);
         audience.push(newMember);
         io.sockets.emit('audience', audience);
         console.log("audience joined: %s", payload.name)
+    })
+
+    socket.on('start', function(payload) {
+        speaker.name = payload.name;
+        speaker.id = this.id;
+        speaker.type = 'speaker';
+        this.emit('joined', speaker)
+        console.log("Presentation Started: '%s' by %s", title, speaker)
     })
 
     socket.emit('welcome', {title: title})
