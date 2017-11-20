@@ -9,6 +9,7 @@ export default class Header extends Component {
     return (
       <header>
         <h1>{this.props.title}</h1>
+        <p>{this.props.speaker}</p>
         <div id="connection-status" className={this.props.status}></div>
       </header>
     );
