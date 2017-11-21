@@ -92,7 +92,7 @@ class App extends Component {
   }
 
   ask(currentQuestion) {
-    sessionStorage.answer = ""
+    sessionStorage.answer = "`"
     this.setState({currentQuestion})
 
   }
