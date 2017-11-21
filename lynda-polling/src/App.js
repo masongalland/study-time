@@ -14,7 +14,9 @@ class App extends Component {
       title: "",
       member: {},
       audience: [],
-      speaker: ''
+      speaker: '',
+      questions: [],
+      currentQuestion: false
     }
 
     this.connect = this.connect.bind(this)
@@ -24,6 +26,7 @@ class App extends Component {
     this.joined = this.joined.bind(this)
     this.updateAudience = this.updateAudience.bind(this)
     this.start = this.start.bind(this)
+    this.ask = this.ask.bind(this)
   }
 
   componentWillMount() {
@@ -34,7 +37,8 @@ class App extends Component {
     this.socket.on('joined', this.joined)
     this.socket.on('audience', this.updateAudience);
     this.socket.on('start', this.start);
-    this.socket.on('end', this.updateState)
+    this.socket.on('end', this.updateState);
+    this.socket.on('ask', this.ask)
   }
 
   emit(eventName, payload) {
@@ -85,6 +89,12 @@ class App extends Component {
       sessionStorage.title = presentation.title;
     }
     this.setState(presentation)
+  }
+
+  ask(currentQuestion) {
+    sessionStorage.answer = ""
+    this.setState({currentQuestion})
+
   }
 
   render() {
