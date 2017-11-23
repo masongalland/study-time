@@ -10,8 +10,8 @@ export default function Router(props) {
   return (
     <Switch>
       <Route path="/" exact render={() => <Audience {...props} />} />
-      <Route render={() => <Speaker {...props} />} />
-      <Route component={Board} path="/board" exact />
+      <Route path="/speaker" render={() => <Speaker {...props} />} />
+      <Route path="/board" render={() => <Board {...props} />} />
       <Route component={Whoops404} />
     </Switch>
   );

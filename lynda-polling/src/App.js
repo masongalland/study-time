@@ -16,7 +16,8 @@ class App extends Component {
       audience: [],
       speaker: '',
       questions: [],
-      currentQuestion: false
+      currentQuestion: false,
+      results: {}
     }
 
     this.connect = this.connect.bind(this)
@@ -27,6 +28,7 @@ class App extends Component {
     this.updateAudience = this.updateAudience.bind(this)
     this.start = this.start.bind(this)
     this.ask = this.ask.bind(this)
+    this.updateResults = this.updateResults.bind(this)
   }
 
   componentWillMount() {
@@ -38,7 +40,8 @@ class App extends Component {
     this.socket.on('audience', this.updateAudience);
     this.socket.on('start', this.start);
     this.socket.on('end', this.updateState);
-    this.socket.on('ask', this.ask)
+    this.socket.on('ask', this.ask);
+    this.socket.on('results',this.updateResults);
   }
 
   emit(eventName, payload) {
@@ -92,8 +95,13 @@ class App extends Component {
   }
 
   ask(currentQuestion) {
-    sessionStorage.answer = "`"
+    sessionStorage.answer = ""
     this.setState({currentQuestion})
+
+  }
+
+  updateResults(data) {
+    this.setState({results: data})
 
   }
 

@@ -24,6 +24,7 @@ export default class Join extends Component {
         />
         <button>Join</button>
         <Link to="/speaker">Join as speaker</Link>
+        <Link to="/board">Go to the board</Link>
       </form>
     );
   }

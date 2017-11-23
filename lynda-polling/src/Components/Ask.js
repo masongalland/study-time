@@ -39,7 +39,8 @@ select(choice) {
                </button>
       )
     });
-
+    console.log(this.props)
+    console.log(this.state)
     return (
       <div id="currentQuestion">
 
