@@ -6,7 +6,7 @@ import Ask from "./Ask";
 export default class Audience extends Component {
   render() {
     return (
-      <div>
+      <div id="audience">
         <Display if={this.props.status === "connected"}>
           <Display if={this.props.member.name}>
             <Display if={!this.props.currentQuestion}>
@@ -21,7 +21,7 @@ export default class Audience extends Component {
           </Display>
 
           <Display if={!this.props.member.name}>
-            <h1>Join the session</h1>
+            <h1>Join!</h1>
             <Join emit={this.props.emit} />
           </Display>
         </Display>

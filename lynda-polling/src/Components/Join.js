@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default class Join extends Component {
   constructor(props) {
@@ -9,23 +9,24 @@ export default class Join extends Component {
 
   join() {
     const memberName = this.refs.name.value;
-    this.props.emit('join', { name: memberName })
+    this.props.emit("join", { name: memberName });
   }
 
   render() {
     return (
-      <form action="javascript:void(0)" onSubmit={this.join}>
-        <label>Full Name</label>
-        <input
-          className="form-control"
-          placeholder="enter your full name..."
-          ref="name"
-          required
-        />
-        <button>Join</button>
+      <div>
+        <form className="join-form" action="javascript:void(0)" onSubmit={this.join}>
+          <input
+            className="form-control"
+            placeholder="Name"
+            ref="name"
+            required
+          />
+          <button class="submit-btn">Enter</button>
+        </form>
         <Link to="/speaker">Join as speaker</Link>
         <Link to="/board">Go to the board</Link>
-      </form>
+      </div>
     );
   }
 }
