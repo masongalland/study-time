@@ -9,28 +9,32 @@ export default class JoinSpeaker extends Component {
   start() {
     const speakerName = this.refs.name.value;
     const title = this.refs.title.value;
-    this.props.emit('start', {name: speakerName, title: title})
+    this.props.emit("start", { name: speakerName, title: title });
   }
 
   render() {
     return (
-      <form action="javascript:void(0)" onSubmit={this.start}>
-        <label>Full Name</label>
+      <form
+        id="speaker-join-form"
+        className="join-form"
+        action="javascript:void(0)"
+        onSubmit={this.start}
+      >
         <input
           className="form-control"
-          placeholder="enter your full name..."
+          placeholder="Name"
           ref="name"
           required
         />
 
-        <label>Presentation Title</label>
         <input
+          id="speaker-title-input"
           className="form-control"
-          placeholder="enter a title for this presentation..."
+          placeholder="Title"
           ref="title"
           required
         />
-        <button>Join</button>
+        <button className="submit-btn">Enter</button>
       </form>
     );
   }

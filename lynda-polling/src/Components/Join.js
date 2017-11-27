@@ -22,7 +22,7 @@ export default class Join extends Component {
             ref="name"
             required
           />
-          <button class="submit-btn">Enter</button>
+          <button className="submit-btn">Enter</button>
         <Link id="start-presentation" to="/speaker">Start Presentation</Link>
         </form>
       </div>

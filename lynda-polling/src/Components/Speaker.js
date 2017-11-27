@@ -7,7 +7,7 @@ import Questions from './Questions';
 export default class Speaker extends Component {
     render() {
         return (
-            <div>
+            <div id="speaker">
                 <Display if={this.props.status === "connected"}>
                     <Display if={this.props.member.name && this.props.member.type === "speaker"} >
                         <Questions questions={this.props.questions} emit={this.props.emit} />
@@ -15,7 +15,7 @@ export default class Speaker extends Component {
                     </Display>
 
                     <Display if={!this.props.member.name} >
-                        <h2>Start the presentation</h2>
+                        <h1 className="home">Start!</h1>
                         <JoinSpeaker emit={this.props.emit}/>
                     </Display>
 
