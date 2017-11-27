@@ -14,7 +14,7 @@ export default class Join extends Component {
 
   render() {
     return (
-      <div>
+      <div id="join-wrapper">
         <form className="join-form" action="javascript:void(0)" onSubmit={this.join}>
           <input
             className="form-control"
@@ -23,9 +23,8 @@ export default class Join extends Component {
             required
           />
           <button class="submit-btn">Enter</button>
+        <Link id="start-presentation" to="/speaker">Start Presentation</Link>
         </form>
-        <Link to="/speaker">Join as speaker</Link>
-        <Link to="/board">Go to the board</Link>
       </div>
     );
   }

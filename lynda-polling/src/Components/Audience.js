@@ -21,7 +21,7 @@ export default class Audience extends Component {
           </Display>
 
           <Display if={!this.props.member.name}>
-            <h1>Join!</h1>
+            <h1 class="home">Join!</h1>
             <Join emit={this.props.emit} />
           </Display>
         </Display>

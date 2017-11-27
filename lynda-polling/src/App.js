@@ -108,7 +108,7 @@ class App extends Component {
     console.log(this.state)
     return (
       <div className="App">
-        <Header {...this.state}/>
+        {this.state.title ? <Header {...this.state}/> : null }
         <Router emit={this.emit} {...this.state}/>
       </div>
     );

@@ -3,7 +3,7 @@ const _ = require("underscore");
 
 const app = express();
 var connections = [];
-var title = "Untitled Presentation";
+var title = "";
 var audience = [];
 var speaker = {};
 var questions = require('./app-questions');
