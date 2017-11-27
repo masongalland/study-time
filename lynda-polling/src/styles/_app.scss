@@ -185,14 +185,20 @@ body {
   font-family: $font;
 }
 
+h2 {
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
 header {
-  display: flex;
-  justify-content: space-between;
+  padding: 15px;
+  color: white;
 }
 
 #audience, #speaker {
   text-align: center;
   color: white;
+  padding: 10px;
 }
 
 h1 {
@@ -204,7 +210,7 @@ h1 {
 }
 
 .submit-btn {
-  width: 70%;
+  width: 76%;
   font-size: 20px;
   padding: 12px 0;
   color: white;
@@ -233,8 +239,14 @@ h1 {
   margin: 10px 0 20px 0;
 }
 
+.welcome {
+  margin: 140px 0 20px 0;
+  font-size: 40px;
+
+}
+
 .form-control {
-  width: 70%;
+  width: 76%;
   font-size: 20px;
   padding: 10px;
   text-align: center;

@@ -10,8 +10,7 @@ export default class Audience extends Component {
         <Display if={this.props.status === "connected"}>
           <Display if={this.props.member.name}>
             <Display if={!this.props.currentQuestion}>
-              <h2>Welcome {this.props.member.name}</h2>
-              <p> {this.props.audience.length} audience members connected</p>
+              <h2 className="welcome">Welcome,  {this.props.member.name}!</h2>
               <p>Questions will appear here.</p>
             </Display>
 
