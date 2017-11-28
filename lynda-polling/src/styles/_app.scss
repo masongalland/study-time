@@ -193,6 +193,17 @@ h2 {
 header {
   padding: 15px;
   color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-count {
+  display: flex;
+  align-items: center;
+
+  i{
+    margin-left: 5px;
+  }
 }
 
 #audience, #speaker {
@@ -275,8 +286,34 @@ h1 {
   width: 90%;
   padding: 15px;
   margin: 10px auto;
+  box-shadow: $shadow;
+  text-align: start;
 }
 
 .asked-question {
+  margin-bottom: 25px;
+}
+
+#speaker {
+  padding: 15px;
+}
+
+#questions {
+  div {
+    text-align: left;
+    margin: 0 auto 10px auto;
+    display: flex;
+    width: 90%;
+
+    span:first-child {
+      margin-right: 5px;
+    }
+    padding: 10px;
+    box-shadow: $shadow;
+    background-color: $sc1
+  };
+  h2 {
+    margin-bottom: 15px;
+  };
   margin-bottom: 25px;
 }

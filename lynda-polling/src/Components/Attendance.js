@@ -13,7 +13,6 @@ export default class Attendance extends Component {
 
     return (
       <div>
-        <h2> Attendance -- {this.props.audience.length} members</h2>
         <table>
           <thead>
             <tr>

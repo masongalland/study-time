@@ -10,7 +10,7 @@ export default class Speaker extends Component {
             <div id="speaker">
                 <Display if={this.props.status === "connected"}>
                     <Display if={this.props.member.name && this.props.member.type === "speaker"} >
-                        <Questions questions={this.props.questions} emit={this.props.emit} />
+                        <Questions questions={this.props.questions} emit={this.props.emit} currentQuestion = {this.props.currentQuestion} />
                         <Attendance audience={this.props.audience} />
                     </Display>
 

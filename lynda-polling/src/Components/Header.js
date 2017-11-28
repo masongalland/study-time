@@ -8,8 +8,14 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <h2>{this.props.title}</h2>
-        <p>Presented by: {this.props.speaker}</p>
+        <div>
+          <h2>{this.props.title}</h2>
+          <p>Presented by: {this.props.speaker}</p>
+        </div>
+        <div className="user-count">
+          <p>{this.props.audience.length}</p>
+          <i className="fa fa-users" aria-hidden="true"></i>
+        </div>
       </header>
     );
   }
