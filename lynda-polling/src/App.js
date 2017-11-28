@@ -95,7 +95,7 @@ class App extends Component {
 
   ask(currentQuestion) {
     sessionStorage.answer = ""
-    this.setState({currentQuestion})
+    this.setState({currentQuestion, results: {}})
 
   }
 
