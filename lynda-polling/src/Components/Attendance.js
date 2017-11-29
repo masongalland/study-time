@@ -13,7 +13,8 @@ export default class Attendance extends Component {
 
     return (
       <div>
-        <table>
+        <h2>Attendance</h2>
+        <table id="attendance-tbl">
           <thead>
             <tr>
               <th>Audience Member</th>

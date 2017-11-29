@@ -201,12 +201,13 @@ header {
   display: flex;
   align-items: center;
 
-  i{
+  i {
     margin-left: 5px;
   }
 }
 
-#audience, #speaker {
+#audience,
+#speaker {
   text-align: center;
   color: white;
   padding: 10px;
@@ -253,7 +254,6 @@ h1 {
 .welcome {
   margin: 140px 0 20px 0;
   font-size: 40px;
-
 }
 
 .form-control {
@@ -278,7 +278,7 @@ h1 {
 }
 
 #currentQuestion {
-  margin-top:35px;
+  margin-top: 35px;
   padding: 10px;
 }
 
@@ -296,6 +296,10 @@ h1 {
 
 #speaker {
   padding: 15px;
+
+  h2 {
+    margin-bottom: 15px;
+  }
 }
 
 #questions {
@@ -310,10 +314,48 @@ h1 {
     }
     padding: 10px;
     box-shadow: $shadow;
-    background-color: $sc1
-  };
+    background-color: $sc1;
+  }
+
+  margin-bottom: 40px;
+}
+
+#scoreboard {
   h2 {
     margin-bottom: 15px;
-  };
-  margin-bottom: 25px;
+  }
+  margin-bottom: 40px
+}
+
+#attendance-tbl {
+  width: 90%;
+  margin: auto;
+  box-shadow: $shadow;
+
+  td,
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    vertical-align: middle;
+  }
+
+  tr:nth-child(even) {
+    background-color: $sc1;
+  }
+
+  tr:nth-child(odd) {
+    background-color:rgba(65, 85, 174, 0.37);
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $sc4;
+    color: white;
+  }
 }

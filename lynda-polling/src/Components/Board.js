@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Display from "./Display";
 
-import {Bar} from 'react-chartjs-2';
+import { Bar } from "react-chartjs-2";
 
 export default class Board extends Component {
   render() {
@@ -13,21 +13,27 @@ export default class Board extends Component {
           data: Object.values(this.props.results)
         }
       ]
-    }
+    };
     let options = {
-      legend: {display: false},
-      scales: {xAxes: [{gridLines: {display: false}}]}
-    }
+      legend: { display: false },
+      scales: {
+        xAxes: [{ gridLines: { display: false } }],
+        yAxes: [{ gridLines: { display: false } }]
+      }
+    };
     return (
       <div id="scoreboard">
         <Display
-          if={this.props.status === "connected" && this.props.currentQuestion}
+          if={this.props.status === "connected" && this.props.currentQuestion && Object.keys(this.props.results).length > 0}
         >
-          <Bar data={data} options={options}/>
+          <h2>Results</h2>
+          <Bar data={data} options={options} />
         </Display>
 
-        <Display if={this.props.status === 'connected' && !this.props.currentQuestion} >
-            <h3>Awaiting a Question...</h3>
+        <Display
+          if={this.props.status === "connected" && Object.keys(this.props.results).length < 1}
+        >
+          <h2>Awaiting Results...</h2>
         </Display>
       </div>
     );

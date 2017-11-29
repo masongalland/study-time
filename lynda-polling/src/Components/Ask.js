@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Display from "./Display";
+import Board from "./Board";
 
 export default class Ask extends Component {
   constructor(props) {
@@ -53,6 +54,7 @@ export default class Ask extends Component {
         <Display if={this.state.answer}>
           <h2>You answered: </h2>
           <p style={{ backgroundColor: colors[this.state.choices.indexOf(this.state.answer)] }} className="choice">{this.state.answer}.)  {this.props.question[this.state.answer]}</p>
+          <Board {...this.props} />
         </Display>
 
         <Display if={!this.state.answer}>

@@ -15,7 +15,7 @@ export default class Audience extends Component {
             </Display>
 
             <Display if={this.props.currentQuestion}>
-              <Ask question={this.props.currentQuestion} emit={this.props.emit}/>
+              <Ask question={this.props.currentQuestion} {...this.props}/>
             </Display>
           </Display>
 
